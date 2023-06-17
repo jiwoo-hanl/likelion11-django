@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     "corsheaders",
     'rest_framework',
     'rest_framework_simplejwt',
-    "rest_framework_simplejwt.token_blacklist"
+    "rest_framework_simplejwt.token_blacklist",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -56,10 +58,12 @@ CSRF_TRUSTED_ORIGINS = [
    'http://127.0.0.1:3000', 
    'http://localhost:3000',
    'https://port-0-likelion11-django-koh2xlizm52f6.sel4.cloudtype.app',
+   'https://web-likelion11-react-koh2xlizm52f6.sel4.cloudtype.app',
 ]
 CORS_ALLOWED_ORIGINS= [
   'http://127.0.0.1:3000', 
   'http://localhost:3000',
+  'https://web-likelion11-react-koh2xlizm52f6.sel4.cloudtype.app',
 ]
 CORS_ALLOW_CREDENTIALS = True # cookie를 주고받으려면 얘를 True로 설정해야 해요.
 CORS_ALLOW_HEADERS = (
